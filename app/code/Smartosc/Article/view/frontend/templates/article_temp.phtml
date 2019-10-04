@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @var \Smartosc\Article\Block\Display $block
+ */
+
+$data = $block->article();
+
+?>
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Title</td>
+        <td>Image</td>
+    </tr>
+    <?php
+    if (!empty($data)) {
+        foreach ($data as $article) {
+            echo '<tr>
+                <td>' . $article['id'] . '</td>
+                <td>' . $article['title'] . '</td>
+                <td>' . $article['image'] . '</td>
+            </tr>';
+        }
+    }
+    ?>
+
+</table>
